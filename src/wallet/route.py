@@ -1,5 +1,5 @@
 import logging
-from datetime import timezone
+from datetime import timezone, datetime
 from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from typing import Optional
@@ -288,7 +288,9 @@ async def get_last_withdrawal_attempt(
 ):
     async with TransactionService() as service:
         last_withdrawal = await service.get_last_withdrawal_attempt(user.id)
+        
         if not last_withdrawal:
-            raise HTTPException(status.HTTP_404_NOT_FOUND, 'No withdrawal attempts found')
+            # Если нет записи о последнем выводе, возвращаем 1 сентября 1900 года
+            return {"created_at": datetime(1900, 9, 1)}
 
         return {"created_at": last_withdrawal.created_at}
