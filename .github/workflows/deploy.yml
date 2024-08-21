@@ -1,0 +1,22 @@
+name: deploy to server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: install ssh keys
+      # check this thread to understand why its needed:
+      # https://stackoverflow.com/a/70447517
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.MOON_PRIVATE_SSH_KEY }}" > ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.MOON_IP_ADRESS }} > ~/.ssh/known_hosts
+      - name: connect and pull
+        run: ssh ${{ secrets.MOON_USER }}@${{ secrets.MOON_IP_ADRESS }} "cd ${{ secrets.PROJECT_DIR }} && git pull origin main && docker-compose down -v && bash start.sh  && exit"
+      - name: cleanup
+        run: rm -rf ~/.ssh

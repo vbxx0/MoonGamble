@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    command: uvicorn src.api:app --host 0.0.0.0 --port 8000 --workers 1
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    env_file: "./src/.env"
+    depends_on:
+      - pgdb
+
+  # telegram_bot:
+  #   build: .
+  #   env_file: "src/.env"
+  #   # restart: always
+  #   command: python telegram.py
+  #   volumes:
+  #     - .:/app
+
+  pgdb:
+    image: postgres:13
+    container_name: pgdb
+    expose:
+      - 5432
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    env_file: "src/.env"
+
+volumes:
+  postgres_data:
+
+networks:
+  api_network:
