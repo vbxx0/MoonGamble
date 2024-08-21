@@ -878,3 +878,864 @@ WHERE transactions.user_id = $1::INTEGER
 2024-08-21 06:41:29,974 - src.wallet.service - INFO - Total transactions found: 0
 2024-08-21 06:41:29,975 - src.wallet.route - INFO - Retrieved 0 transactions for user 6. Total: 0
 2024-08-21 06:41:29,975 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:45,806 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2024-08-21 06:45:45,807 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2024-08-21 06:45:45,812 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2024-08-21 06:45:45,813 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2024-08-21 06:45:45,817 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2024-08-21 06:45:45,818 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2024-08-21 06:45:45,820 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:45,841 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:45:45,842 - sqlalchemy.engine.Engine - INFO - [generated in 0.00061s] ('with',)
+2024-08-21 06:45:45,911 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:45,919 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:45,920 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:45:45,921 - sqlalchemy.engine.Engine - INFO - [cached since 0.07948s ago] ('with',)
+2024-08-21 06:45:45,922 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:45,926 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:45,927 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:45:45,928 - sqlalchemy.engine.Engine - INFO - [cached since 0.08721s ago] ('with',)
+2024-08-21 06:45:45,931 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:45,937 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:45,938 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:45:45,939 - sqlalchemy.engine.Engine - INFO - [cached since 0.0976s ago] ('with',)
+2024-08-21 06:45:45,940 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:45,948 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:45,949 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:45:45,950 - sqlalchemy.engine.Engine - INFO - [cached since 0.1085s ago] ('with',)
+2024-08-21 06:45:45,978 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:45,979 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:45:45,980 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:45,982 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:45:45,982 - sqlalchemy.engine.Engine - INFO - [generated in 0.00048s] (6,)
+2024-08-21 06:45:45,994 - src.wallet.service - INFO - Final balance for user 6: 0
+2024-08-21 06:45:45,995 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:45:45,995 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:45:45,996 - sqlalchemy.engine.Engine - INFO - [cached since 0.01414s ago] (6,)
+2024-08-21 06:45:45,997 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:45:45,997 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:45:45,998 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:45:45,998 - sqlalchemy.engine.Engine - INFO - [cached since 0.01621s ago] (6,)
+2024-08-21 06:45:45,999 - src.wallet.service - INFO - Final pure balance for user 6: 0
+2024-08-21 06:45:45,999 - src.wallet.route - INFO - User 6 balance: 0, Bonus balance: 0, Pure balance: 0
+2024-08-21 06:45:45,999 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:46,003 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:46,004 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:45:46,005 - sqlalchemy.engine.Engine - INFO - [cached since 0.1638s ago] ('with',)
+2024-08-21 06:45:46,007 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:46,008 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:45:46,009 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:46,010 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:45:46,011 - sqlalchemy.engine.Engine - INFO - [cached since 0.02892s ago] (6,)
+2024-08-21 06:45:46,012 - src.wallet.service - INFO - Final balance for user 6: 0
+2024-08-21 06:45:46,013 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:45:46,014 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:45:46,014 - sqlalchemy.engine.Engine - INFO - [cached since 0.03245s ago] (6,)
+2024-08-21 06:45:46,016 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:45:46,017 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:45:46,017 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:45:46,026 - sqlalchemy.engine.Engine - INFO - [cached since 0.04392s ago] (6,)
+2024-08-21 06:45:46,028 - src.wallet.service - INFO - Final pure balance for user 6: 0
+2024-08-21 06:45:46,029 - src.wallet.route - INFO - User 6 balance: 0, Bonus balance: 0, Pure balance: 0
+2024-08-21 06:45:46,030 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:52,023 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:52,024 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:45:52,025 - sqlalchemy.engine.Engine - INFO - [cached since 6.184s ago] ('with',)
+2024-08-21 06:45:52,026 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:52,028 - src.wallet.route - INFO - No referrer_id provided.
+2024-08-21 06:45:52,029 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:52,031 - sqlalchemy.engine.Engine - INFO - UPDATE users SET has_deposited=$1::BOOLEAN WHERE users.id = $2::INTEGER
+2024-08-21 06:45:52,031 - sqlalchemy.engine.Engine - INFO - [generated in 0.00039s] (True, 6)
+2024-08-21 06:45:52,035 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-08-21 06:45:52,039 - src.wallet.service - INFO - Creating transaction: payment_system=<PaymentSystem.sberpay: 'sberpay'> type=<TransactionType.IN: 0> from_account='' to_account='' amount=Decimal('1000') user_id=6 status=<TransactionStatus.CONFIRMED: 'confirmed'>
+2024-08-21 06:45:52,039 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:52,041 - sqlalchemy.engine.Engine - INFO - INSERT INTO transactions (payment_system, type, amount, from_account, to_account, created_at, status, user_id) VALUES ($1::paymentsystem, $2::transactiontype, $3::NUMERIC, $4::VARCHAR, $5::VARCHAR, $6::TIMESTAMP WITHOUT TIME ZONE, $7::transactionstatus, $8::INTEGER) RETURNING transactions.id
+2024-08-21 06:45:52,042 - sqlalchemy.engine.Engine - INFO - [generated in 0.00044s] ('sberpay', 'IN', Decimal('1000'), '', '', datetime.datetime(2024, 8, 21, 6, 45, 52, 41632), 'CONFIRMED', 6)
+2024-08-21 06:45:52,054 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-08-21 06:45:52,059 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:52,061 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.id = $1::INTEGER
+2024-08-21 06:45:52,061 - sqlalchemy.engine.Engine - INFO - [generated in 0.00059s] (6,)
+2024-08-21 06:45:52,064 - src.wallet.service - INFO - Transaction created with ID: 6
+2024-08-21 06:45:52,064 - src.wallet.route - INFO - Deposit created: <src.wallet.models.Transaction object at 0x7fdc0eb95ca0>
+2024-08-21 06:45:52,065 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:56,773 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:56,774 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:45:56,775 - sqlalchemy.engine.Engine - INFO - [cached since 10.93s ago] ('with',)
+2024-08-21 06:45:56,777 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:45:56,778 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:45:56,779 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:56,779 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:45:56,780 - sqlalchemy.engine.Engine - INFO - [cached since 10.8s ago] (6,)
+2024-08-21 06:45:56,781 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:45:56,782 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:45:56,782 - src.wallet.service - INFO - Final balance for user 6: 1000
+2024-08-21 06:45:56,783 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:45:56,783 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:45:56,783 - sqlalchemy.engine.Engine - INFO - [cached since 10.8s ago] (6,)
+2024-08-21 06:45:56,784 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:45:56,785 - src.wallet.route - INFO - User 6 is attempting to withdraw 500. Balance: 1000, Pure balance: 1000
+2024-08-21 06:45:56,785 - src.wallet.service - INFO - Creating transaction: payment_system=<PaymentSystem.sberpay: 'sberpay'> type=<TransactionType.OUT: 1> from_account='' to_account='' amount=Decimal('500') user_id=6 status=<TransactionStatus.PENDING: 'pending'>
+2024-08-21 06:45:56,786 - sqlalchemy.engine.Engine - INFO - INSERT INTO transactions (payment_system, type, amount, from_account, to_account, created_at, status, user_id) VALUES ($1::paymentsystem, $2::transactiontype, $3::NUMERIC, $4::VARCHAR, $5::VARCHAR, $6::TIMESTAMP WITHOUT TIME ZONE, $7::transactionstatus, $8::INTEGER) RETURNING transactions.id
+2024-08-21 06:45:56,786 - sqlalchemy.engine.Engine - INFO - [cached since 4.745s ago] ('sberpay', 'OUT', Decimal('500'), '', '', datetime.datetime(2024, 8, 21, 6, 45, 56, 786361), 'PENDING', 6)
+2024-08-21 06:45:56,788 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-08-21 06:45:56,792 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:45:56,793 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.id = $1::INTEGER
+2024-08-21 06:45:56,793 - sqlalchemy.engine.Engine - INFO - [cached since 4.732s ago] (7,)
+2024-08-21 06:45:56,795 - src.wallet.service - INFO - Transaction created with ID: 7
+2024-08-21 06:45:56,795 - src.wallet.route - INFO - Withdrawal request created: <src.wallet.models.Transaction object at 0x7fdc0e946210>
+2024-08-21 06:45:56,796 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:00,294 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:00,298 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:00,312 - sqlalchemy.engine.Engine - INFO - [cached since 14.47s ago] ('with',)
+2024-08-21 06:46:00,314 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:00,322 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:00,323 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:00,324 - sqlalchemy.engine.Engine - INFO - [cached since 14.48s ago] ('with',)
+2024-08-21 06:46:00,329 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:00,375 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:00,380 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:00,382 - sqlalchemy.engine.Engine - INFO - [cached since 14.54s ago] ('with',)
+2024-08-21 06:46:00,383 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:00,385 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:00,386 - sqlalchemy.engine.Engine - INFO - [cached since 14.54s ago] ('with',)
+2024-08-21 06:46:00,390 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:00,404 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:00,406 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:46:00,407 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:00,408 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:00,411 - sqlalchemy.engine.Engine - INFO - [cached since 14.43s ago] (6,)
+2024-08-21 06:46:00,415 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:00,415 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:00,416 - sqlalchemy.engine.Engine - INFO - [cached since 14.57s ago] ('with',)
+2024-08-21 06:46:00,417 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:46:00,418 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:46:00,418 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:46:00,419 - src.wallet.service - INFO - Final balance for user 6: 1000
+2024-08-21 06:46:00,419 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:46:00,420 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:00,421 - sqlalchemy.engine.Engine - INFO - [cached since 14.44s ago] (6,)
+2024-08-21 06:46:00,424 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:00,428 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:46:00,429 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:46:00,432 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:00,437 - sqlalchemy.engine.Engine - INFO - [cached since 14.45s ago] (6,)
+2024-08-21 06:46:00,438 - src.wallet.service - INFO - Final pure balance for user 6: 1000
+2024-08-21 06:46:00,439 - src.wallet.route - INFO - User 6 balance: 1000, Bonus balance: 0, Pure balance: 1000
+2024-08-21 06:46:00,440 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:00,448 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:00,450 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:00,451 - sqlalchemy.engine.Engine - INFO - [cached since 14.61s ago] ('with',)
+2024-08-21 06:46:00,453 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:00,455 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:46:00,457 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:00,458 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:00,461 - sqlalchemy.engine.Engine - INFO - [cached since 14.48s ago] (6,)
+2024-08-21 06:46:00,463 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:46:00,465 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:46:00,467 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:46:00,471 - src.wallet.service - INFO - Final balance for user 6: 1000
+2024-08-21 06:46:00,472 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:46:00,473 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:00,474 - sqlalchemy.engine.Engine - INFO - [cached since 14.49s ago] (6,)
+2024-08-21 06:46:00,475 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:46:00,476 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:46:00,479 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:00,480 - sqlalchemy.engine.Engine - INFO - [cached since 14.5s ago] (6,)
+2024-08-21 06:46:00,482 - src.wallet.service - INFO - Final pure balance for user 6: 1000
+2024-08-21 06:46:00,487 - src.wallet.route - INFO - User 6 balance: 1000, Bonus balance: 0, Pure balance: 1000
+2024-08-21 06:46:00,488 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:12,272 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:12,273 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:12,273 - sqlalchemy.engine.Engine - INFO - [cached since 26.43s ago] ('admin',)
+2024-08-21 06:46:12,276 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:13,508 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:13,510 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:13,511 - sqlalchemy.engine.Engine - INFO - [cached since 27.67s ago] ('admin',)
+2024-08-21 06:46:13,513 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:13,519 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:13,520 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:13,520 - sqlalchemy.engine.Engine - INFO - [cached since 27.68s ago] ('admin',)
+2024-08-21 06:46:13,522 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:13,528 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:13,530 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:13,530 - sqlalchemy.engine.Engine - INFO - [cached since 27.69s ago] ('admin',)
+2024-08-21 06:46:13,532 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:13,539 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:13,540 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:13,540 - sqlalchemy.engine.Engine - INFO - [cached since 27.7s ago] ('admin',)
+2024-08-21 06:46:13,542 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:13,621 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:13,623 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:13,623 - sqlalchemy.engine.Engine - INFO - [cached since 27.78s ago] ('admin',)
+2024-08-21 06:46:13,625 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:13,626 - src.wallet.service - INFO - Calculating balance for user 5
+2024-08-21 06:46:13,627 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:13,628 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:13,634 - sqlalchemy.engine.Engine - INFO - [cached since 27.65s ago] (5,)
+2024-08-21 06:46:13,636 - src.wallet.service - INFO - Final balance for user 5: 0
+2024-08-21 06:46:13,636 - src.wallet.service - INFO - Calculating bonus balance for user 5
+2024-08-21 06:46:13,637 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:13,638 - sqlalchemy.engine.Engine - INFO - [cached since 27.66s ago] (5,)
+2024-08-21 06:46:13,638 - src.wallet.service - INFO - Final bonus balance for user 5: 0
+2024-08-21 06:46:13,639 - src.wallet.service - INFO - Calculating pure balance for user 5
+2024-08-21 06:46:13,639 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:13,640 - sqlalchemy.engine.Engine - INFO - [cached since 27.66s ago] (5,)
+2024-08-21 06:46:13,640 - src.wallet.service - INFO - Final pure balance for user 5: 0
+2024-08-21 06:46:13,641 - src.wallet.route - INFO - User 5 balance: 0, Bonus balance: 0, Pure balance: 0
+2024-08-21 06:46:13,641 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:13,645 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:13,646 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:13,647 - sqlalchemy.engine.Engine - INFO - [cached since 27.81s ago] ('admin',)
+2024-08-21 06:46:13,649 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:13,650 - src.wallet.service - INFO - Calculating balance for user 5
+2024-08-21 06:46:13,651 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:13,652 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:13,652 - sqlalchemy.engine.Engine - INFO - [cached since 27.67s ago] (5,)
+2024-08-21 06:46:13,654 - src.wallet.service - INFO - Final balance for user 5: 0
+2024-08-21 06:46:13,654 - src.wallet.service - INFO - Calculating bonus balance for user 5
+2024-08-21 06:46:13,655 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:13,655 - sqlalchemy.engine.Engine - INFO - [cached since 27.67s ago] (5,)
+2024-08-21 06:46:13,656 - src.wallet.service - INFO - Final bonus balance for user 5: 0
+2024-08-21 06:46:13,657 - src.wallet.service - INFO - Calculating pure balance for user 5
+2024-08-21 06:46:13,658 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:46:13,658 - sqlalchemy.engine.Engine - INFO - [cached since 27.68s ago] (5,)
+2024-08-21 06:46:13,659 - src.wallet.service - INFO - Final pure balance for user 5: 0
+2024-08-21 06:46:13,660 - src.wallet.route - INFO - User 5 balance: 0, Bonus balance: 0, Pure balance: 0
+2024-08-21 06:46:13,661 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:16,088 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:16,089 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:16,089 - sqlalchemy.engine.Engine - INFO - [cached since 30.25s ago] ('admin',)
+2024-08-21 06:46:16,090 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:16,091 - src.wallet.service - INFO - Fetching pending withdrawals
+2024-08-21 06:46:16,092 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:16,094 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.type = $1::transactiontype AND transactions.status = $2::transactionstatus
+2024-08-21 06:46:16,095 - sqlalchemy.engine.Engine - INFO - [generated in 0.00099s] ('OUT', 'PENDING')
+2024-08-21 06:46:16,098 - src.wallet.service - INFO - Pending withdrawals found: 5
+2024-08-21 06:46:16,099 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:16,105 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:16,106 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:46:16,106 - sqlalchemy.engine.Engine - INFO - [cached since 30.27s ago] ('admin',)
+2024-08-21 06:46:16,108 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:46:16,110 - src.wallet.service - INFO - Fetching pending withdrawals
+2024-08-21 06:46:16,111 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:46:16,112 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.type = $1::transactiontype AND transactions.status = $2::transactionstatus
+2024-08-21 06:46:16,112 - sqlalchemy.engine.Engine - INFO - [cached since 0.01821s ago] ('OUT', 'PENDING')
+2024-08-21 06:46:16,113 - src.wallet.service - INFO - Pending withdrawals found: 5
+2024-08-21 06:46:16,114 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:04,470 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:04,482 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:04,483 - sqlalchemy.engine.Engine - INFO - [cached since 258.7s ago] ('admin',)
+2024-08-21 06:50:04,510 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:04,518 - src.wallet.service - INFO - Confirming withdrawal with transaction ID: 2
+2024-08-21 06:50:04,520 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:04,525 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id AS transactions_id, transactions.payment_system AS transactions_payment_system, transactions.type AS transactions_type, transactions.amount AS transactions_amount, transactions.from_account AS transactions_from_account, transactions.to_account AS transactions_to_account, transactions.created_at AS transactions_created_at, transactions.status AS transactions_status, transactions.user_id AS transactions_user_id 
+FROM transactions 
+WHERE transactions.id = $1::INTEGER
+2024-08-21 06:50:04,525 - sqlalchemy.engine.Engine - INFO - [generated in 0.00076s] (2,)
+2024-08-21 06:50:04,544 - sqlalchemy.engine.Engine - INFO - UPDATE transactions SET status=$1::transactionstatus WHERE transactions.id = $2::INTEGER
+2024-08-21 06:50:04,544 - sqlalchemy.engine.Engine - INFO - [generated in 0.00060s] ('CONFIRMED', 2)
+2024-08-21 06:50:04,551 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-08-21 06:50:04,559 - src.wallet.service - INFO - Withdrawal confirmed: 2
+2024-08-21 06:50:27,761 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:27,761 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:27,762 - sqlalchemy.engine.Engine - INFO - [cached since 281.9s ago] ('with',)
+2024-08-21 06:50:27,763 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:29,150 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:29,153 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:29,155 - sqlalchemy.engine.Engine - INFO - [cached since 283.3s ago] ('with',)
+2024-08-21 06:50:29,159 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:29,174 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:29,175 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:29,176 - sqlalchemy.engine.Engine - INFO - [cached since 283.4s ago] ('with',)
+2024-08-21 06:50:29,177 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:29,181 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:29,182 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:29,183 - sqlalchemy.engine.Engine - INFO - [cached since 283.4s ago] ('with',)
+2024-08-21 06:50:29,185 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:29,197 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:29,198 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:29,198 - sqlalchemy.engine.Engine - INFO - [cached since 283.4s ago] ('with',)
+2024-08-21 06:50:29,200 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:29,237 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:29,238 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:29,239 - sqlalchemy.engine.Engine - INFO - [cached since 283.4s ago] ('with',)
+2024-08-21 06:50:29,241 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:29,243 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:50:29,244 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:29,245 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:29,247 - sqlalchemy.engine.Engine - INFO - [cached since 283.3s ago] (6,)
+2024-08-21 06:50:29,254 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:50:29,257 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:50:29,257 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:50:29,257 - src.wallet.service - INFO - Final balance for user 6: 1000
+2024-08-21 06:50:29,258 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:50:29,258 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:29,259 - sqlalchemy.engine.Engine - INFO - [cached since 283.3s ago] (6,)
+2024-08-21 06:50:29,259 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:50:29,260 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:50:29,260 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:29,260 - sqlalchemy.engine.Engine - INFO - [cached since 283.3s ago] (6,)
+2024-08-21 06:50:29,261 - src.wallet.service - INFO - Final pure balance for user 6: 1000
+2024-08-21 06:50:29,261 - src.wallet.route - INFO - User 6 balance: 1000, Bonus balance: 0, Pure balance: 1000
+2024-08-21 06:50:29,262 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:29,267 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:29,268 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:29,268 - sqlalchemy.engine.Engine - INFO - [cached since 283.4s ago] ('with',)
+2024-08-21 06:50:29,270 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:29,271 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:50:29,272 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:29,272 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:29,273 - sqlalchemy.engine.Engine - INFO - [cached since 283.3s ago] (6,)
+2024-08-21 06:50:29,274 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:50:29,275 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:50:29,275 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:50:29,275 - src.wallet.service - INFO - Final balance for user 6: 1000
+2024-08-21 06:50:29,276 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:50:29,276 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:29,277 - sqlalchemy.engine.Engine - INFO - [cached since 283.3s ago] (6,)
+2024-08-21 06:50:29,281 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:50:29,286 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:50:29,287 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:29,288 - sqlalchemy.engine.Engine - INFO - [cached since 283.3s ago] (6,)
+2024-08-21 06:50:29,290 - src.wallet.service - INFO - Final pure balance for user 6: 1000
+2024-08-21 06:50:29,291 - src.wallet.route - INFO - User 6 balance: 1000, Bonus balance: 0, Pure balance: 1000
+2024-08-21 06:50:29,291 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:39,064 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:39,065 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:39,065 - sqlalchemy.engine.Engine - INFO - [cached since 293.2s ago] ('with',)
+2024-08-21 06:50:39,066 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:39,068 - src.wallet.route - INFO - User 6 has already made a deposit.
+2024-08-21 06:50:39,070 - src.wallet.service - INFO - Creating transaction: payment_system=<PaymentSystem.sberpay: 'sberpay'> type=<TransactionType.IN: 0> from_account='' to_account='' amount=Decimal('2000') user_id=6 status=<TransactionStatus.CONFIRMED: 'confirmed'>
+2024-08-21 06:50:39,070 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:39,071 - sqlalchemy.engine.Engine - INFO - INSERT INTO transactions (payment_system, type, amount, from_account, to_account, created_at, status, user_id) VALUES ($1::paymentsystem, $2::transactiontype, $3::NUMERIC, $4::VARCHAR, $5::VARCHAR, $6::TIMESTAMP WITHOUT TIME ZONE, $7::transactionstatus, $8::INTEGER) RETURNING transactions.id
+2024-08-21 06:50:39,071 - sqlalchemy.engine.Engine - INFO - [cached since 287s ago] ('sberpay', 'IN', Decimal('2000'), '', '', datetime.datetime(2024, 8, 21, 6, 50, 39, 71493), 'CONFIRMED', 6)
+2024-08-21 06:50:39,080 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-08-21 06:50:39,084 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:39,085 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.id = $1::INTEGER
+2024-08-21 06:50:39,085 - sqlalchemy.engine.Engine - INFO - [cached since 287s ago] (8,)
+2024-08-21 06:50:39,086 - src.wallet.service - INFO - Transaction created with ID: 8
+2024-08-21 06:50:39,086 - src.wallet.route - INFO - Deposit created: <src.wallet.models.Transaction object at 0x7fdc0c621430>
+2024-08-21 06:50:39,087 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:44,929 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:44,930 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:44,930 - sqlalchemy.engine.Engine - INFO - [cached since 299.1s ago] ('with',)
+2024-08-21 06:50:44,932 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:44,933 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:50:44,933 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:44,933 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:44,934 - sqlalchemy.engine.Engine - INFO - [cached since 299s ago] (6,)
+2024-08-21 06:50:44,935 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:50:44,935 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:50:44,935 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:50:44,935 - src.wallet.service - INFO - Transaction: 8, Type: TransactionType.IN, Amount: 2000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:50:44,936 - src.wallet.service - INFO - Balance increased by 2000, new balance: 3000
+2024-08-21 06:50:44,936 - src.wallet.service - INFO - Final balance for user 6: 3000
+2024-08-21 06:50:44,936 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:50:44,936 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:44,937 - sqlalchemy.engine.Engine - INFO - [cached since 299s ago] (6,)
+2024-08-21 06:50:44,938 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:50:44,939 - src.wallet.route - INFO - User 6 is attempting to withdraw 3000. Balance: 3000, Pure balance: 3000
+2024-08-21 06:50:44,940 - src.wallet.service - INFO - Creating transaction: payment_system=<PaymentSystem.sberpay: 'sberpay'> type=<TransactionType.OUT: 1> from_account='' to_account='' amount=Decimal('3000') user_id=6 status=<TransactionStatus.PENDING: 'pending'>
+2024-08-21 06:50:44,941 - sqlalchemy.engine.Engine - INFO - INSERT INTO transactions (payment_system, type, amount, from_account, to_account, created_at, status, user_id) VALUES ($1::paymentsystem, $2::transactiontype, $3::NUMERIC, $4::VARCHAR, $5::VARCHAR, $6::TIMESTAMP WITHOUT TIME ZONE, $7::transactionstatus, $8::INTEGER) RETURNING transactions.id
+2024-08-21 06:50:44,942 - sqlalchemy.engine.Engine - INFO - [cached since 292.9s ago] ('sberpay', 'OUT', Decimal('3000'), '', '', datetime.datetime(2024, 8, 21, 6, 50, 44, 941681), 'PENDING', 6)
+2024-08-21 06:50:44,944 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-08-21 06:50:44,947 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:44,948 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.id = $1::INTEGER
+2024-08-21 06:50:44,948 - sqlalchemy.engine.Engine - INFO - [cached since 292.9s ago] (9,)
+2024-08-21 06:50:44,949 - src.wallet.service - INFO - Transaction created with ID: 9
+2024-08-21 06:50:44,949 - src.wallet.route - INFO - Withdrawal request created: <src.wallet.models.Transaction object at 0x7fdc0e997950>
+2024-08-21 06:50:44,950 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:48,763 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:48,764 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:48,765 - sqlalchemy.engine.Engine - INFO - [cached since 302.9s ago] ('with',)
+2024-08-21 06:50:48,768 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:48,774 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:48,775 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:48,776 - sqlalchemy.engine.Engine - INFO - [cached since 303s ago] ('with',)
+2024-08-21 06:50:48,777 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:48,782 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:48,784 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:48,784 - sqlalchemy.engine.Engine - INFO - [cached since 303s ago] ('with',)
+2024-08-21 06:50:48,786 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:48,791 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:48,792 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:48,792 - sqlalchemy.engine.Engine - INFO - [cached since 303s ago] ('with',)
+2024-08-21 06:50:48,794 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:48,829 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:48,830 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:48,832 - sqlalchemy.engine.Engine - INFO - [cached since 303s ago] ('with',)
+2024-08-21 06:50:48,835 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:48,836 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:50:48,838 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:48,838 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:48,839 - sqlalchemy.engine.Engine - INFO - [cached since 302.9s ago] (6,)
+2024-08-21 06:50:48,841 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:50:48,842 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:50:48,844 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:50:48,844 - src.wallet.service - INFO - Transaction: 8, Type: TransactionType.IN, Amount: 2000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:50:48,845 - src.wallet.service - INFO - Balance increased by 2000, new balance: 3000
+2024-08-21 06:50:48,845 - src.wallet.service - INFO - Transaction: 9, Type: TransactionType.OUT, Amount: 3000, Status: TransactionStatus.PENDING
+2024-08-21 06:50:48,845 - src.wallet.service - INFO - Final balance for user 6: 3000
+2024-08-21 06:50:48,846 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:50:48,847 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:48,847 - sqlalchemy.engine.Engine - INFO - [cached since 302.9s ago] (6,)
+2024-08-21 06:50:48,848 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:50:48,849 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:50:48,849 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:48,849 - sqlalchemy.engine.Engine - INFO - [cached since 302.9s ago] (6,)
+2024-08-21 06:50:48,850 - src.wallet.service - INFO - Final pure balance for user 6: 3000
+2024-08-21 06:50:48,851 - src.wallet.route - INFO - User 6 balance: 3000, Bonus balance: 0, Pure balance: 3000
+2024-08-21 06:50:48,851 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:48,856 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:48,856 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:48,857 - sqlalchemy.engine.Engine - INFO - [cached since 303s ago] ('with',)
+2024-08-21 06:50:48,859 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:48,860 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:50:48,860 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:48,861 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:48,862 - sqlalchemy.engine.Engine - INFO - [cached since 302.9s ago] (6,)
+2024-08-21 06:50:48,863 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:50:48,864 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:50:48,864 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:50:48,865 - src.wallet.service - INFO - Transaction: 8, Type: TransactionType.IN, Amount: 2000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:50:48,865 - src.wallet.service - INFO - Balance increased by 2000, new balance: 3000
+2024-08-21 06:50:48,865 - src.wallet.service - INFO - Transaction: 9, Type: TransactionType.OUT, Amount: 3000, Status: TransactionStatus.PENDING
+2024-08-21 06:50:48,865 - src.wallet.service - INFO - Final balance for user 6: 3000
+2024-08-21 06:50:48,866 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:50:48,866 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:48,867 - sqlalchemy.engine.Engine - INFO - [cached since 302.9s ago] (6,)
+2024-08-21 06:50:48,869 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:50:48,869 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:50:48,870 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:50:48,870 - sqlalchemy.engine.Engine - INFO - [cached since 302.9s ago] (6,)
+2024-08-21 06:50:48,872 - src.wallet.service - INFO - Final pure balance for user 6: 3000
+2024-08-21 06:50:48,872 - src.wallet.route - INFO - User 6 balance: 3000, Bonus balance: 0, Pure balance: 3000
+2024-08-21 06:50:48,873 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:50:59,650 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:50:59,650 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:50:59,651 - sqlalchemy.engine.Engine - INFO - [cached since 313.8s ago] ('admin',)
+2024-08-21 06:50:59,652 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:00,469 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:00,470 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:00,473 - sqlalchemy.engine.Engine - INFO - [cached since 314.6s ago] ('admin',)
+2024-08-21 06:51:00,475 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:00,480 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:00,481 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:00,482 - sqlalchemy.engine.Engine - INFO - [cached since 314.7s ago] ('admin',)
+2024-08-21 06:51:00,484 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:00,489 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:00,489 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:00,490 - sqlalchemy.engine.Engine - INFO - [cached since 314.7s ago] ('admin',)
+2024-08-21 06:51:00,492 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:00,496 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:00,497 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:00,497 - sqlalchemy.engine.Engine - INFO - [cached since 314.7s ago] ('admin',)
+2024-08-21 06:51:00,499 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:00,539 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:00,549 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:00,551 - sqlalchemy.engine.Engine - INFO - [cached since 314.7s ago] ('admin',)
+2024-08-21 06:51:00,553 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:00,557 - src.wallet.service - INFO - Calculating balance for user 5
+2024-08-21 06:51:00,563 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:00,564 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:00,566 - sqlalchemy.engine.Engine - INFO - [cached since 314.6s ago] (5,)
+2024-08-21 06:51:00,567 - src.wallet.service - INFO - Final balance for user 5: 0
+2024-08-21 06:51:00,568 - src.wallet.service - INFO - Calculating bonus balance for user 5
+2024-08-21 06:51:00,569 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:00,569 - sqlalchemy.engine.Engine - INFO - [cached since 314.6s ago] (5,)
+2024-08-21 06:51:00,571 - src.wallet.service - INFO - Final bonus balance for user 5: 0
+2024-08-21 06:51:00,572 - src.wallet.service - INFO - Calculating pure balance for user 5
+2024-08-21 06:51:00,574 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:00,574 - sqlalchemy.engine.Engine - INFO - [cached since 314.6s ago] (5,)
+2024-08-21 06:51:00,575 - src.wallet.service - INFO - Final pure balance for user 5: 0
+2024-08-21 06:51:00,576 - src.wallet.route - INFO - User 5 balance: 0, Bonus balance: 0, Pure balance: 0
+2024-08-21 06:51:00,576 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:00,591 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:00,598 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:00,599 - sqlalchemy.engine.Engine - INFO - [cached since 314.8s ago] ('admin',)
+2024-08-21 06:51:00,612 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:00,614 - src.wallet.service - INFO - Calculating balance for user 5
+2024-08-21 06:51:00,615 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:00,617 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:00,618 - sqlalchemy.engine.Engine - INFO - [cached since 314.7s ago] (5,)
+2024-08-21 06:51:00,620 - src.wallet.service - INFO - Final balance for user 5: 0
+2024-08-21 06:51:00,624 - src.wallet.service - INFO - Calculating bonus balance for user 5
+2024-08-21 06:51:00,625 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:00,626 - sqlalchemy.engine.Engine - INFO - [cached since 314.7s ago] (5,)
+2024-08-21 06:51:00,627 - src.wallet.service - INFO - Final bonus balance for user 5: 0
+2024-08-21 06:51:00,628 - src.wallet.service - INFO - Calculating pure balance for user 5
+2024-08-21 06:51:00,629 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:00,630 - sqlalchemy.engine.Engine - INFO - [cached since 314.7s ago] (5,)
+2024-08-21 06:51:00,631 - src.wallet.service - INFO - Final pure balance for user 5: 0
+2024-08-21 06:51:00,631 - src.wallet.route - INFO - User 5 balance: 0, Bonus balance: 0, Pure balance: 0
+2024-08-21 06:51:00,632 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:03,472 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:03,476 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:03,478 - sqlalchemy.engine.Engine - INFO - [cached since 317.7s ago] ('admin',)
+2024-08-21 06:51:03,480 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:03,481 - src.wallet.service - INFO - Fetching pending withdrawals
+2024-08-21 06:51:03,483 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:03,483 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.type = $1::transactiontype AND transactions.status = $2::transactionstatus
+2024-08-21 06:51:03,484 - sqlalchemy.engine.Engine - INFO - [cached since 287.4s ago] ('OUT', 'PENDING')
+2024-08-21 06:51:03,486 - src.wallet.service - INFO - Pending withdrawals found: 5
+2024-08-21 06:51:03,486 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:03,493 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:03,494 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:03,495 - sqlalchemy.engine.Engine - INFO - [cached since 317.7s ago] ('admin',)
+2024-08-21 06:51:03,496 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:03,498 - src.wallet.service - INFO - Fetching pending withdrawals
+2024-08-21 06:51:03,499 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:03,500 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.type = $1::transactiontype AND transactions.status = $2::transactionstatus
+2024-08-21 06:51:03,500 - sqlalchemy.engine.Engine - INFO - [cached since 287.4s ago] ('OUT', 'PENDING')
+2024-08-21 06:51:03,501 - src.wallet.service - INFO - Pending withdrawals found: 5
+2024-08-21 06:51:03,502 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:07,294 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:07,295 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:07,295 - sqlalchemy.engine.Engine - INFO - [cached since 321.5s ago] ('admin',)
+2024-08-21 06:51:07,297 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:07,298 - src.wallet.service - INFO - Confirming withdrawal with transaction ID: 9
+2024-08-21 06:51:07,298 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:07,299 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id AS transactions_id, transactions.payment_system AS transactions_payment_system, transactions.type AS transactions_type, transactions.amount AS transactions_amount, transactions.from_account AS transactions_from_account, transactions.to_account AS transactions_to_account, transactions.created_at AS transactions_created_at, transactions.status AS transactions_status, transactions.user_id AS transactions_user_id 
+FROM transactions 
+WHERE transactions.id = $1::INTEGER
+2024-08-21 06:51:07,299 - sqlalchemy.engine.Engine - INFO - [cached since 62.78s ago] (9,)
+2024-08-21 06:51:07,300 - sqlalchemy.engine.Engine - INFO - UPDATE transactions SET status=$1::transactionstatus WHERE transactions.id = $2::INTEGER
+2024-08-21 06:51:07,301 - sqlalchemy.engine.Engine - INFO - [cached since 62.76s ago] ('CONFIRMED', 9)
+2024-08-21 06:51:07,302 - sqlalchemy.engine.Engine - INFO - COMMIT
+2024-08-21 06:51:07,305 - src.wallet.service - INFO - Withdrawal confirmed: 9
+2024-08-21 06:51:18,510 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:18,511 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:18,511 - sqlalchemy.engine.Engine - INFO - [cached since 332.7s ago] ('with',)
+2024-08-21 06:51:18,513 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:19,323 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:19,324 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:19,325 - sqlalchemy.engine.Engine - INFO - [cached since 333.5s ago] ('with',)
+2024-08-21 06:51:19,327 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:19,333 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:19,334 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:19,335 - sqlalchemy.engine.Engine - INFO - [cached since 333.5s ago] ('with',)
+2024-08-21 06:51:19,337 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:19,342 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:19,342 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:19,343 - sqlalchemy.engine.Engine - INFO - [cached since 333.5s ago] ('with',)
+2024-08-21 06:51:19,345 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:19,350 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:19,351 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:19,351 - sqlalchemy.engine.Engine - INFO - [cached since 333.5s ago] ('with',)
+2024-08-21 06:51:19,353 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:19,381 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:19,383 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:19,384 - sqlalchemy.engine.Engine - INFO - [cached since 333.6s ago] ('with',)
+2024-08-21 06:51:19,386 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:19,388 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:51:19,389 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:19,391 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:19,392 - sqlalchemy.engine.Engine - INFO - [cached since 333.4s ago] (6,)
+2024-08-21 06:51:19,401 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:51:19,401 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:51:19,402 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:51:19,402 - src.wallet.service - INFO - Transaction: 8, Type: TransactionType.IN, Amount: 2000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:51:19,403 - src.wallet.service - INFO - Balance increased by 2000, new balance: 3000
+2024-08-21 06:51:19,404 - src.wallet.service - INFO - Transaction: 9, Type: TransactionType.OUT, Amount: 3000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:51:19,404 - src.wallet.service - INFO - Balance decreased by 3000, new balance: 0
+2024-08-21 06:51:19,404 - src.wallet.service - INFO - Final balance for user 6: 0
+2024-08-21 06:51:19,404 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:51:19,405 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:19,405 - sqlalchemy.engine.Engine - INFO - [cached since 333.4s ago] (6,)
+2024-08-21 06:51:19,406 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:51:19,406 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:51:19,407 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:19,407 - sqlalchemy.engine.Engine - INFO - [cached since 333.4s ago] (6,)
+2024-08-21 06:51:19,408 - src.wallet.service - INFO - Final pure balance for user 6: 0
+2024-08-21 06:51:19,408 - src.wallet.route - INFO - User 6 balance: 0, Bonus balance: 0, Pure balance: 0
+2024-08-21 06:51:19,408 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:19,413 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:19,414 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:19,414 - sqlalchemy.engine.Engine - INFO - [cached since 333.6s ago] ('with',)
+2024-08-21 06:51:19,416 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:19,417 - src.wallet.service - INFO - Calculating balance for user 6
+2024-08-21 06:51:19,417 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:19,418 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:19,418 - sqlalchemy.engine.Engine - INFO - [cached since 333.5s ago] (6,)
+2024-08-21 06:51:19,421 - src.wallet.service - INFO - Transaction: 6, Type: TransactionType.IN, Amount: 1000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:51:19,422 - src.wallet.service - INFO - Balance increased by 1000, new balance: 1000
+2024-08-21 06:51:19,422 - src.wallet.service - INFO - Transaction: 7, Type: TransactionType.OUT, Amount: 500, Status: TransactionStatus.PENDING
+2024-08-21 06:51:19,423 - src.wallet.service - INFO - Transaction: 8, Type: TransactionType.IN, Amount: 2000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:51:19,424 - src.wallet.service - INFO - Balance increased by 2000, new balance: 3000
+2024-08-21 06:51:19,428 - src.wallet.service - INFO - Transaction: 9, Type: TransactionType.OUT, Amount: 3000, Status: TransactionStatus.CONFIRMED
+2024-08-21 06:51:19,430 - src.wallet.service - INFO - Balance decreased by 3000, new balance: 0
+2024-08-21 06:51:19,430 - src.wallet.service - INFO - Final balance for user 6: 0
+2024-08-21 06:51:19,430 - src.wallet.service - INFO - Calculating bonus balance for user 6
+2024-08-21 06:51:19,431 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:19,431 - sqlalchemy.engine.Engine - INFO - [cached since 333.5s ago] (6,)
+2024-08-21 06:51:19,432 - src.wallet.service - INFO - Final bonus balance for user 6: 0
+2024-08-21 06:51:19,432 - src.wallet.service - INFO - Calculating pure balance for user 6
+2024-08-21 06:51:19,433 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:19,433 - sqlalchemy.engine.Engine - INFO - [cached since 333.5s ago] (6,)
+2024-08-21 06:51:19,434 - src.wallet.service - INFO - Final pure balance for user 6: 0
+2024-08-21 06:51:19,434 - src.wallet.route - INFO - User 6 balance: 0, Bonus balance: 0, Pure balance: 0
+2024-08-21 06:51:19,434 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:33,600 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:33,601 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:33,601 - sqlalchemy.engine.Engine - INFO - [cached since 347.8s ago] ('with',)
+2024-08-21 06:51:33,603 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:33,605 - src.wallet.service - INFO - Fetching transactions for user 6 - Page: 1, Limit: 3, Types: None
+2024-08-21 06:51:33,606 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:33,609 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER
+2024-08-21 06:51:33,610 - sqlalchemy.engine.Engine - INFO - [generated in 0.00107s] (6, 3, 0)
+2024-08-21 06:51:33,614 - src.wallet.service - INFO - Transactions fetched: 3
+2024-08-21 06:51:33,615 - src.wallet.service - INFO - Fetching total transactions for user 6 with types None
+2024-08-21 06:51:33,615 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:33,615 - sqlalchemy.engine.Engine - INFO - [cached since 347.7s ago] (6,)
+2024-08-21 06:51:33,616 - src.wallet.service - INFO - Total transactions found: 4
+2024-08-21 06:51:33,617 - src.wallet.route - INFO - Retrieved 3 transactions for user 6. Total: 4
+2024-08-21 06:51:33,618 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:33,624 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:33,625 - sqlalchemy.engine.Engine - INFO - SELECT users.id, users.referrer_id, users.username, users.password, users.fullname, users.avatar, users.telegram_id, users.telegram_fullname, users.telegram_username, users.telegram_code, users.vk_id, users.active, users.fingerprint, users.fingerprint_hash, users.role, users.created_at, users.has_deposited, users.referral_bonus_rate, users.referral_earnings, users.referral_count 
+FROM users 
+WHERE users.username = $1::VARCHAR
+2024-08-21 06:51:33,625 - sqlalchemy.engine.Engine - INFO - [cached since 347.8s ago] ('with',)
+2024-08-21 06:51:33,626 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2024-08-21 06:51:33,627 - src.wallet.service - INFO - Fetching transactions for user 6 - Page: 1, Limit: 3, Types: None
+2024-08-21 06:51:33,628 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2024-08-21 06:51:33,629 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER 
+ LIMIT $2::INTEGER OFFSET $3::INTEGER
+2024-08-21 06:51:33,629 - sqlalchemy.engine.Engine - INFO - [cached since 0.02025s ago] (6, 3, 0)
+2024-08-21 06:51:33,631 - src.wallet.service - INFO - Transactions fetched: 3
+2024-08-21 06:51:33,631 - src.wallet.service - INFO - Fetching total transactions for user 6 with types None
+2024-08-21 06:51:33,632 - sqlalchemy.engine.Engine - INFO - SELECT transactions.id, transactions.payment_system, transactions.type, transactions.amount, transactions.from_account, transactions.to_account, transactions.created_at, transactions.status, transactions.user_id 
+FROM transactions 
+WHERE transactions.user_id = $1::INTEGER
+2024-08-21 06:51:33,632 - sqlalchemy.engine.Engine - INFO - [cached since 347.7s ago] (6,)
+2024-08-21 06:51:33,634 - src.wallet.service - INFO - Total transactions found: 4
+2024-08-21 06:51:33,634 - src.wallet.route - INFO - Retrieved 3 transactions for user 6. Total: 4
+2024-08-21 06:51:33,635 - sqlalchemy.engine.Engine - INFO - ROLLBACK

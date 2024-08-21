@@ -188,3 +188,18 @@ class TransactionService(BaseService):
         else:
             logger.warning(f"Transaction not found or not pending: {transaction_id}")
             raise WalletException("Transaction not found or not in pending status")
+
+    async def get_last_withdrawal_attempt(self, user_id: int) -> Optional[Transaction]:
+        logger.info(f"Fetching last withdrawal attempt for user ID: {user_id}")
+        result = await self.session.execute(
+            select(Transaction).where(
+                Transaction.user_id == user_id,
+                Transaction.type == TransactionType.OUT
+            ).order_by(Transaction.created_at.desc()).limit(1)
+        )
+        last_withdrawal = result.scalars().first()
+        if last_withdrawal:
+            logger.info(f"Last withdrawal attempt found: {last_withdrawal.created_at}")
+        else:
+            logger.info("No withdrawal attempts found")
+        return last_withdrawal

@@ -278,3 +278,17 @@ async def reject_withdrawal(
             return {"message": "Withdrawal rejected"}
         except WalletException as e:
             raise HTTPException(status.HTTP_400_BAD_REQUEST, str(e))
+
+@router.get(
+    '/wallet/withdrawals/last',
+    tags=['Wallet']
+)
+async def get_last_withdrawal_attempt(
+    user: ReadProfile = Depends(get_current_active_user)
+):
+    async with TransactionService() as service:
+        last_withdrawal = await service.get_last_withdrawal_attempt(user.id)
+        if not last_withdrawal:
+            raise HTTPException(status.HTTP_404_NOT_FOUND, 'No withdrawal attempts found')
+
+        return {"created_at": last_withdrawal.created_at}
