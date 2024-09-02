@@ -15,12 +15,12 @@ router = APIRouter(prefix="/providers/pragmatic",
 
 
 @router.get("/games")
-async def get_games(user: ReadProfile = Depends(get_current_active_user)):
+async def get_games():
     return await make_request("GET", "games")
 
 
 @router.post("/games/lobby")
-async def get_lobby(game_uuid: str, currency: str, user: ReadProfile = Depends(get_current_active_user)):
+async def get_lobby(game_uuid: str, currency: str, ):
     params = {"game_uuid": game_uuid, "currency": currency}
     return await make_request("GET", "games/lobby", params)
 
@@ -28,7 +28,7 @@ async def get_lobby(game_uuid: str, currency: str, user: ReadProfile = Depends(g
 @router.post("/games/init")
 async def init_game_session(game_uuid: str, player_id: str, player_name: str, currency: str, session_id: str,
                             return_url: str = None, language: str = None,
-                            user: ReadProfile = Depends(get_current_active_user)):
+                            ):
     data = {
         "game_uuid": game_uuid,
         "player_id": player_id,
@@ -43,22 +43,22 @@ async def init_game_session(game_uuid: str, player_id: str, player_name: str, cu
 
 @router.post("/callback")
 async def callback(
-    action: str = Query(...),
-    player_id: str = Query(None),
-    game_uuid: str = Query(None),
-    amount: float = Query(None),
-    currency: str = Query(None),
-    transaction_id: str = Query(None),
-    session_id: str = Query(None),
-    type: str = Query(None),
-    bet_transaction_id: str = Query(None),
-    rollback_transactions: str = Query(None),
-    freespin_id: str = Query(None),
-    quantity: int = Query(None),
-    valid_from: int = Query(None),
-    valid_until: int = Query(None),
-    player_name: str = Query(None),
-    denomination: float = Query(None)
+        action: str = Query(...),
+        player_id: str = Query(None),
+        game_uuid: str = Query(None),
+        amount: float = Query(None),
+        currency: str = Query(None),
+        transaction_id: str = Query(None),
+        session_id: str = Query(None),
+        type: str = Query(None),
+        bet_transaction_id: str = Query(None),
+        rollback_transactions: str = Query(None),
+        freespin_id: str = Query(None),
+        quantity: int = Query(None),
+        valid_from: int = Query(None),
+        valid_until: int = Query(None),
+        player_name: str = Query(None),
+        denomination: float = Query(None)
 ):
     if action == "balance":
         return await handle_balance(BalanceRequest(
@@ -106,16 +106,16 @@ async def callback(
         ))
     elif action == "freespins/set":
         return await set_freespin_campaign(player_id=player_id,
-                                            player_name=player_name,
-                                            currency=currency,
-                                            quantity=quantity,
-                                            valid_from=valid_from,
-                                            valid_until=valid_until,
-                                            game_uuid=game_uuid,
-                                            freespin_id=freespin_id,
-                                            bet_id=None,
-                                            total_bet_id=None,
-                                            denomination=denomination)
+                                           player_name=player_name,
+                                           currency=currency,
+                                           quantity=quantity,
+                                           valid_from=valid_from,
+                                           valid_until=valid_until,
+                                           game_uuid=game_uuid,
+                                           freespin_id=freespin_id,
+                                           bet_id=None,
+                                           total_bet_id=None,
+                                           denomination=denomination)
     elif action == "freespins/get":
         return await get_freespin_campaign(freespin_id=freespin_id)
     elif action == "freespins/cancel":
@@ -189,22 +189,22 @@ async def handle_rollback(rollback_request: RollbackRequest):
 
 
 @router.get("/limits")
-async def get_limits(user: ReadProfile = Depends(get_current_active_user)):
+async def get_limits():
     return await make_request("GET", "limits")
 
 
 @router.get("/limits/freespin")
-async def get_freespin_limits(user: ReadProfile = Depends(get_current_active_user)):
+async def get_freespin_limits():
     return await make_request("GET", "limits/freespin")
 
 
 @router.get("/jackpots")
-async def get_jackpots(user: ReadProfile = Depends(get_current_active_user)):
+async def get_jackpots():
     return await make_request("GET", "jackpots")
 
 
 @router.post("/balance/notify")
-async def notify_balance_change(balance: float, session_id: str, user: ReadProfile = Depends(get_current_active_user)):
+async def notify_balance_change(balance: float, session_id: str, ):
     data = {
         "balance": balance,
         "session_id": session_id
@@ -213,7 +213,7 @@ async def notify_balance_change(balance: float, session_id: str, user: ReadProfi
 
 
 @router.get("/freespins/bets")
-async def get_freespin_bets(game_uuid: str, currency: str, user: ReadProfile = Depends(get_current_active_user)):
+async def get_freespin_bets(game_uuid: str, currency: str, ):
     params = {"game_uuid": game_uuid, "currency": currency}
     return await make_request("GET", "freespins/bets", params)
 
@@ -222,7 +222,7 @@ async def get_freespin_bets(game_uuid: str, currency: str, user: ReadProfile = D
 async def set_freespin_campaign(player_id: str, player_name: str, currency: str, quantity: int, valid_from: int,
                                 valid_until: int, game_uuid: str, freespin_id: str, bet_id: int = None,
                                 total_bet_id: int = None, denomination: float = None,
-                                user: ReadProfile = Depends(get_current_active_user)):
+                                ):
     data = {
         "player_id": player_id,
         "player_name": player_name,
@@ -240,13 +240,13 @@ async def set_freespin_campaign(player_id: str, player_name: str, currency: str,
 
 
 @router.get("/freespins/get")
-async def get_freespin_campaign(freespin_id: str, user: ReadProfile = Depends(get_current_active_user)):
+async def get_freespin_campaign(freespin_id: str, ):
     params = {"freespin_id": freespin_id}
     return await make_request("GET", "freespins/get", params)
 
 
 @router.post("/freespins/cancel")
-async def cancel_freespin_campaign(freespin_id: str, user: ReadProfile = Depends(get_current_active_user)):
+async def cancel_freespin_campaign(freespin_id: str, ):
     data = {"freespin_id": freespin_id}
     return await make_request("POST", "freespins/cancel", data=data)
 
