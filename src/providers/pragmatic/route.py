@@ -1,6 +1,7 @@
 import logging
 
 from fastapi import APIRouter, Depends, HTTPException, Request, Query
+from pydantic import ValidationError
 
 from src.providers.dependencies import get_current_active_user
 from src.providers.pragmatic.schemas import BalanceRequest, BetRequest, WinRequest, RefundRequest, RollbackRequest
@@ -60,68 +61,71 @@ async def callback(
         player_name: str = Query(None),
         denomination: float = Query(None)
 ):
-    if action == "balance":
-        return await handle_balance(BalanceRequest(
-            player_id=player_id,
-            currency=currency,
-            session_id=session_id
-        ))
-    elif action == "bet":
-        return await handle_bet(BetRequest(
-            player_id=player_id,
-            game_uuid=game_uuid,
-            amount=amount,
-            currency=currency,
-            transaction_id=transaction_id,
-            session_id=session_id,
-            type=type
-        ))
-    elif action == "win":
-        return await handle_win(WinRequest(
-            player_id=player_id,
-            game_uuid=game_uuid,
-            amount=amount,
-            currency=currency,
-            transaction_id=transaction_id,
-            session_id=session_id,
-            type=type
-        ))
-    elif action == "refund":
-        return await handle_refund(RefundRequest(
-            player_id=player_id,
-            game_uuid=game_uuid,
-            amount=amount,
-            currency=currency,
-            transaction_id=transaction_id,
-            session_id=session_id,
-            bet_transaction_id=bet_transaction_id
-        ))
-    elif action == "rollback":
-        return await handle_rollback(RollbackRequest(
-            player_id=player_id,
-            game_uuid=game_uuid,
-            currency=currency,
-            transaction_id=transaction_id,
-            rollback_transactions=rollback_transactions.split(",") if rollback_transactions else []
-        ))
-    elif action == "freespins/set":
-        return await set_freespin_campaign(player_id=player_id,
-                                           player_name=player_name,
-                                           currency=currency,
-                                           quantity=quantity,
-                                           valid_from=valid_from,
-                                           valid_until=valid_until,
-                                           game_uuid=game_uuid,
-                                           freespin_id=freespin_id,
-                                           bet_id=None,
-                                           total_bet_id=None,
-                                           denomination=denomination)
-    elif action == "freespins/get":
-        return await get_freespin_campaign(freespin_id=freespin_id)
-    elif action == "freespins/cancel":
-        return await cancel_freespin_campaign(freespin_id=freespin_id)
-    else:
-        raise HTTPException(status_code=400, detail="Invalid action")
+    try:
+        if action == "balance":
+            return await handle_balance(BalanceRequest(
+                player_id=player_id,
+                currency=currency,
+                session_id=session_id
+            ))
+        elif action == "bet":
+            return await handle_bet(BetRequest(
+                player_id=player_id,
+                game_uuid=game_uuid,
+                amount=amount,
+                currency=currency,
+                transaction_id=transaction_id,
+                session_id=session_id,
+                type=type
+            ))
+        elif action == "win":
+            return await handle_win(WinRequest(
+                player_id=player_id,
+                game_uuid=game_uuid,
+                amount=amount,
+                currency=currency,
+                transaction_id=transaction_id,
+                session_id=session_id,
+                type=type
+            ))
+        elif action == "refund":
+            return await handle_refund(RefundRequest(
+                player_id=player_id,
+                game_uuid=game_uuid,
+                amount=amount,
+                currency=currency,
+                transaction_id=transaction_id,
+                session_id=session_id,
+                bet_transaction_id=bet_transaction_id
+            ))
+        elif action == "rollback":
+            return await handle_rollback(RollbackRequest(
+                player_id=player_id,
+                game_uuid=game_uuid,
+                currency=currency,
+                transaction_id=transaction_id,
+                rollback_transactions=rollback_transactions.split(",") if rollback_transactions else []
+            ))
+        elif action == "freespins/set":
+            return await set_freespin_campaign(player_id=player_id,
+                                               player_name=player_name,
+                                               currency=currency,
+                                               quantity=quantity,
+                                               valid_from=valid_from,
+                                               valid_until=valid_until,
+                                               game_uuid=game_uuid,
+                                               freespin_id=freespin_id,
+                                               bet_id=None,
+                                               total_bet_id=None,
+                                               denomination=denomination)
+        elif action == "freespins/get":
+            return await get_freespin_campaign(freespin_id=freespin_id)
+        elif action == "freespins/cancel":
+            return await cancel_freespin_campaign(freespin_id=freespin_id)
+        else:
+            raise HTTPException(status_code=400, detail="Invalid action")
+    except ValidationError:
+        raise HTTPException(status_code=422, detail=f"Incorrect fields for type `{action}`")
 
 
 async def handle_balance(balance_request: BalanceRequest):
